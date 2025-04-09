@@ -1,0 +1,38 @@
+# GAN Training Configuration
+gan:
+  latent_dim: 100
+  image_size: 64
+  channels: 3
+  batch_size: 64
+  lr_generator: 0.0002
+  lr_discriminator: 0.0002
+  beta1: 0.5
+  beta2: 0.999
+  num_epochs: 100
+  save_interval: 10
+
+# Trajectory Network Configuration
+trajectory:
+  path_length: 10 # Number of latent vectors in sequence
+  hidden_dim: 256
+  num_layers: 3
+  batch_size: 32
+  lr: 0.0001
+  num_epochs: 50
+  save_interval: 5
+  smoothness_weight: 1.0
+  adversarial_weight: 0.1
+
+# Dataset Configuration
+dataset:
+  name: "celeba"
+  root: "./data"
+  image_size: 64
+  num_workers: 4
+
+# Logging Configuration
+logging:
+  project_name: "latent_trajectory_edit"
+  entity: "your_wandb_username"
+  log_interval: 100
+  save_dir: "./checkpoints"
